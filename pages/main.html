@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Входящие</title>
+    <!-- Подключение стилей -->
+	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="../css/media.css">
+	<link rel="stylesheet" href="../libs/fontawesome/all.min.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+	<link rel="shortcut icon" type="image/svg" href="../img/iconlogo.svg">
+	<!-- Конец подключения стилей -->
+</head>
+<body>
+	<template id="bottomSheet-template">
+		<div class="bottomsheet">
+			
+			<div class="glass" :class="{ open: show }" @click="close"></div>
+			<div class="bottomsheet-body" :class="{ open: show }">
+				<div class="bottomsheet-header">
+					<div class="bottomsheet-title">
+						<slot name="title"></slot>
+					</div>
+				<span>
+					<slot name="buttons"></slot>
+					<button class="fab" @click="close"><i class="fa fa-close"></i></button>
+				</span>
+				</div>
+				<div class="bottomsheet-content">
+					<slot></slot>
+				</div>
+			</div>
+			
+		</div>
+	</template>
+	<main class="main" id="app">
+		<div class="wrapper-main">
+			<header class="header-main">
+				<div class="search">
+					<form action="#" method="POST">
+						<div class="form-wrap">
+							<input type="text" placeholder="Поиск в почте" name="search" id="elastic">
+							<button type="submit"><img src="../img/search.svg" alt="search"></button>
+						</div>
+					</form>
+				</div>
+				<div class="tab">
+					<ul class="tab-list list-triger">
+						<li class="tab-item active" data-filter="rows">
+							<div class="icon">
+								<i class="far fa-envelope"></i>
+							</div>
+							<div class="message">
+								<span class="message-col">2</span>
+								<div class="message-text">
+									Важные
+								</div>
+							</div>
+						</li>
+						<li class="tab-item" data-filter="soc">
+							<div class="icon">
+								<i class="far fa-meh"></i>
+							</div>
+							<div class="message">
+								<span class="message-col">55 </span>
+								<div class="message-text">
+									Соцсети
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</header>
+			<section class="page-dialog">
+				<div class="container">
+					<div class="dialog" data-cat="rows">
+						<ul class="list-dialog result">
+							<li class="dialog-item">
+								<div class="dialog-photo red-photo">
+									<img src="../img/s.svg" alt="img">
+								</div>
+								<div class="dialog-content">
+									<div class="dialog-wrapper">
+										<div class="dialog-name">
+											<span>Facebook</span>
+										</div>
+										<div class="dialog-text__preview">
+											<span>in order to activevate your account</span>
+										</div>
+									</div>
+									<div class="data-dialog">
+										21:47
+									</div>
+								</div>
+							</li>
+							<li class="dialog-item">
+								<div class="dialog-photo">
+									<img src="../img/gmail.svg" alt="img">
+								</div>
+								<div class="dialog-content">
+									<div class="dialog-wrapper">
+										<div class="dialog-name">
+											<span>Sarah Lander</span>
+										</div>
+										<div class="dialog-text__preview">
+											<span>Hey!I have the project to end all</span>
+										</div>
+									</div>
+									<div class="data-dialog">
+										21:47
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="dialog hide" data-cat="soc">
+						<ul class="list-dialog result">
+							<li class="dialog-item">
+								<div class="dialog-photo red-photo">
+									<img src="../img/s.svg" alt="img">
+								</div>
+								<div class="dialog-content">
+									<div class="dialog-wrapper">
+										<div class="dialog-name">
+											<span>Facebook</span>
+										</div>
+										<div class="dialog-text__preview">
+											<span>in order to activevate your account</span>
+										</div>
+									</div>
+									<div class="data-dialog">
+										21:47
+									</div>
+								</div>
+							</li>
+							<li class="dialog-item">
+								<div class="dialog-photo">
+									<img src="../img/gmail.svg" alt="img">
+								</div>
+								<div class="dialog-content">
+									<div class="dialog-wrapper">
+										<div class="dialog-name">
+											<span>Sarah Lander</span>
+										</div>
+										<div class="dialog-text__preview">
+											<span>Hey!I have the project to end all</span>
+										</div>
+									</div>
+									<div class="data-dialog">
+										21:47
+									</div>
+								</div>
+							</li>
+							<li class="dialog-item">
+								<div class="dialog-photo">
+									<img src="../img/gmail.svg" alt="img">
+								</div>
+								<div class="dialog-content">
+									<div class="dialog-wrapper">
+										<div class="dialog-name">
+											<span>Sarah Lander</span>
+										</div>
+										<div class="dialog-text__preview">
+											<span>Hey!I have the project to end all</span>
+										</div>
+									</div>
+									<div class="data-dialog">
+										21:47
+									</div>
+								</div>
+							</li>
+							<li class="dialog-item">
+								<div class="dialog-photo">
+									<img src="../img/gmail.svg" alt="img">
+								</div>
+								<div class="dialog-content">
+									<div class="dialog-wrapper">
+										<div class="dialog-name">
+											<span>Sarah Lander</span>
+										</div>
+										<div class="dialog-text__preview">
+											<span>Hey!I have the project to end all</span>
+										</div>
+									</div>
+									<div class="data-dialog">
+										21:47
+									</div>
+								</div>
+							</li>
+							<li class="dialog-item">
+								<div class="dialog-photo">
+									<img src="../img/gmail.svg" alt="img">
+								</div>
+								<div class="dialog-content">
+									<div class="dialog-wrapper">
+										<div class="dialog-name">
+											<span>Sarah Lander</span>
+										</div>
+										<div class="dialog-text__preview">
+											<span>Hey!I have the project to end all</span>
+										</div>
+									</div>
+									<div class="data-dialog">
+										21:47
+									</div>
+								</div>
+							</li>
+							<li class="dialog-item">
+								<div class="dialog-photo">
+									<img src="../img/gmail.svg" alt="img">
+								</div>
+								<div class="dialog-content">
+									<div class="dialog-wrapper">
+										<div class="dialog-name">
+											<span>Sarah Lander</span>
+										</div>
+										<div class="dialog-text__preview">
+											<span>Hey!I have the project to end all</span>
+										</div>
+									</div>
+									<div class="data-dialog">
+										21:47
+									</div>
+								</div>
+							</li>
+							<li class="dialog-item">
+								<div class="dialog-photo">
+									<img src="../img/gmail.svg" alt="img">
+								</div>
+								<div class="dialog-content">
+									<div class="dialog-wrapper">
+										<div class="dialog-name">
+											<span>Sarah Lander</span>
+										</div>
+										<div class="dialog-text__preview">
+											<span>Hey!I have the project to end all</span>
+										</div>
+									</div>
+									<div class="data-dialog">
+										21:47
+									</div>
+								</div>
+							</li>
+							<li class="dialog-item">
+								<div class="dialog-photo">
+									<img src="../img/gmail.svg" alt="img">
+								</div>
+								<div class="dialog-content">
+									<div class="dialog-wrapper">
+										<div class="dialog-name">
+											<span>Sarah Lander</span>
+										</div>
+										<div class="dialog-text__preview">
+											<span>Hey!I have the project to end all</span>
+										</div>
+									</div>
+									<div class="data-dialog">
+										21:47
+									</div>
+								</div>
+							</li>
+							<li class="dialog-item">
+								<div class="dialog-photo">
+									<img src="../img/gmail.svg" alt="img">
+								</div>
+								<div class="dialog-content">
+									<div class="dialog-wrapper">
+										<div class="dialog-name">
+											<span>Sarah Lander</span>
+										</div>
+										<div class="dialog-text__preview">
+											<span>Hey!I have the project to end all</span>
+										</div>
+									</div>
+									<div class="data-dialog">
+										21:47
+									</div>
+								</div>
+							</li>
+							<li class="dialog-item">
+								<div class="dialog-photo">
+									<img src="../img/gmail.svg" alt="img">
+								</div>
+								<div class="dialog-content">
+									<div class="dialog-wrapper">
+										<div class="dialog-name">
+											<span>Sarah Lander</span>
+										</div>
+										<div class="dialog-text__preview">
+											<span>Hey!I have the project to end all</span>
+										</div>
+									</div>
+									<div class="data-dialog">
+										21:47
+									</div>
+								</div>
+							</li>
+							<li class="dialog-item">
+								<div class="dialog-photo">
+									<img src="../img/gmail.svg" alt="img">
+								</div>
+								<div class="dialog-content">
+									<div class="dialog-wrapper">
+										<div class="dialog-name">
+											<span>Sarah Lander</span>
+										</div>
+										<div class="dialog-text__preview">
+											<span>Hey!I have the project to end all</span>
+										</div>
+									</div>
+									<div class="data-dialog">
+										21:47
+									</div>
+								</div>
+							</li>
+							<li class="dialog-item">
+								<div class="dialog-photo">
+									<img src="../img/gmail.svg" alt="img">
+								</div>
+								<div class="dialog-content">
+									<div class="dialog-wrapper">
+										<div class="dialog-name">
+											<span>Sarah Lander</span>
+										</div>
+										<div class="dialog-text__preview">
+											<span>Hey!I have the project to end all</span>
+										</div>
+									</div>
+									<div class="data-dialog">
+										21:47
+									</div>
+								</div>
+							</li>
+							<li class="dialog-item">
+								<div class="dialog-photo">
+									<img src="../img/gmail.svg" alt="img">
+								</div>
+								<div class="dialog-content">
+									<div class="dialog-wrapper">
+										<div class="dialog-name">
+											<span>Sarah Lander</span>
+										</div>
+										<div class="dialog-text__preview">
+											<span>Hey!I have the project to end all</span>
+										</div>
+									</div>
+									<div class="data-dialog">
+										21:47
+									</div>
+								</div>
+							</li>
+							<li class="dialog-item">
+								<div class="dialog-photo">
+									<img src="../img/gmail.svg" alt="img">
+								</div>
+								<div class="dialog-content">
+									<div class="dialog-wrapper">
+										<div class="dialog-name">
+											<span>Sarah Lander</span>
+										</div>
+										<div class="dialog-text__preview">
+											<span>Hey!I have the project to end all</span>
+										</div>
+									</div>
+									<div class="data-dialog">
+										21:47
+									</div>
+								</div>
+							</li>
+							<li class="dialog-item">
+								<div class="dialog-photo">
+									<img src="../img/gmail.svg" alt="img">
+								</div>
+								<div class="dialog-content">
+									<div class="dialog-wrapper">
+										<div class="dialog-name">
+											<span>Sarah Lander</span>
+										</div>
+										<div class="dialog-text__preview">
+											<span>Hey!I have the project to end all</span>
+										</div>
+									</div>
+									<div class="data-dialog">
+										21:47
+									</div>
+								</div>
+							</li>
+							<li class="dialog-item">
+								<div class="dialog-photo">
+									<img src="../img/gmail.svg" alt="img">
+								</div>
+								<div class="dialog-content">
+									<div class="dialog-wrapper">
+										<div class="dialog-name">
+											<span>Sarah Lander</span>
+										</div>
+										<div class="dialog-text__preview">
+											<span>Hey!I have the project to end all</span>
+										</div>
+									</div>
+									<div class="data-dialog">
+										21:47
+									</div>
+								</div>
+							</li>
+							<li class="dialog-item">
+								<div class="dialog-photo">
+									<img src="../img/gmail.svg" alt="img">
+								</div>
+								<div class="dialog-content">
+									<div class="dialog-wrapper">
+										<div class="dialog-name">
+											<span>Sarah Lander</span>
+										</div>
+										<div class="dialog-text__preview">
+											<span>Hey!I have the project to end all</span>
+										</div>
+									</div>
+									<div class="data-dialog">
+										21:47
+									</div>
+								</div>
+							</li>
+							<li class="dialog-item">
+								<div class="dialog-photo">
+									<img src="../img/gmail.svg" alt="img">
+								</div>
+								<div class="dialog-content">
+									<div class="dialog-wrapper">
+										<div class="dialog-name">
+											<span>Sarah Lander</span>
+										</div>
+										<div class="dialog-text__preview">
+											<span>Hey!I have the project to end all</span>
+										</div>
+									</div>
+									<div class="data-dialog">
+										21:47
+									</div>
+								</div>
+							</li>
+							<li class="dialog-item">
+								<div class="dialog-photo">
+									<img src="../img/gmail.svg" alt="img">
+								</div>
+								<div class="dialog-content">
+									<div class="dialog-wrapper">
+										<div class="dialog-name">
+											<span>Sarah Lander</span>
+										</div>
+										<div class="dialog-text__preview">
+											<span>Hey!I have the project to end all</span>
+										</div>
+									</div>
+									<div class="data-dialog">
+										21:47
+									</div>
+								</div>
+							</li>
+							<li class="dialog-item">
+								<div class="dialog-photo">
+									<img src="../img/gmail.svg" alt="img">
+								</div>
+								<div class="dialog-content">
+									<div class="dialog-wrapper">
+										<div class="dialog-name">
+											<span>Sarah Lander</span>
+										</div>
+										<div class="dialog-text__preview">
+											<span>Hey!I have the project to end all</span>
+										</div>
+									</div>
+									<div class="data-dialog">
+										21:47
+									</div>
+								</div>
+							</li>
+							<li class="dialog-item">
+								<div class="dialog-photo">
+									<img src="../img/gmail.svg" alt="img">
+								</div>
+								<div class="dialog-content">
+									<div class="dialog-wrapper">
+										<div class="dialog-name">
+											<span>Sarah Lander</span>
+										</div>
+										<div class="dialog-text__preview">
+											<span>Hey!I have the project to end all</span>
+										</div>
+									</div>
+									<div class="data-dialog">
+										21:47
+									</div>
+								</div>
+							</li>
+							<li class="dialog-item">
+								<div class="dialog-photo">
+									<img src="../img/gmail.svg" alt="img">
+								</div>
+								<div class="dialog-content">
+									<div class="dialog-wrapper">
+										<div class="dialog-name">
+											<span>Sarah Lander</span>
+										</div>
+										<div class="dialog-text__preview">
+											<span>Hey!I have the project to end all</span>
+										</div>
+									</div>
+									<div class="data-dialog">
+										21:47
+									</div>
+								</div>
+							</li>
+							<li class="dialog-item">
+								<div class="dialog-photo">
+									<img src="../img/gmail.svg" alt="img">
+								</div>
+								<div class="dialog-content">
+									<div class="dialog-wrapper">
+										<div class="dialog-name">
+											<span>Sarah Lander</span>
+										</div>
+										<div class="dialog-text__preview">
+											<span>Hey!I have the project to end all</span>
+										</div>
+									</div>
+									<div class="data-dialog">
+										21:47
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="banner-message__hide">
+						<div class="banner-message__icon">
+							<img src="../img/mes.svg" alt="img">
+						</div>
+						<div class="banner-message__text">
+							Awesome your email is almost empty keep it
+							clean and organized
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="bottom-sheet">
+				<div class="top-bar__wrapper">
+					<div class="bottom-sheet__header" id="triger">
+						<button class="bar-button btn-rgb">
+							<img src="../img/bt.svg" alt="bt">
+						</button>
+						<div class="bottom-sheet__info">
+							<span class="bar-line min"></span>
+							<div class="bottom-sheet__user-info">
+								<div class="user-name">
+									Elisabeth Clark
+									<i class="fas fa-caret-down"></i>
+								</div>
+								<div class="user-mail">
+									<a href="mailto:vlad@htmlbook.ru">Elisaclark@gmail.com</a>
+								</div>
+							</div>
+							<span class="bar-line max"></span>
+						</div>
+						<button class="bar-button btn-white"  @click="openBottom">
+							<img src="../img/fe.svg" alt="bt">
+						</button>
+					</div>
+					<div class="bottom-sheet__content">
+						<div class="top-bar-content__wrapper">
+							<ul class="nav-bar__button nav-bar__button-child">
+								<li>Email options</li>
+								<li>Create new</li>
+							</ul>
+							<ul class="list-bar">
+								<li>
+									<div class="set-time__content flex">
+										<div class="tex-set__time">
+											<i class="far fa-envelope"></i>Inbox
+										</div>
+										<div class="set mail">
+											<span class="col-set">2</span>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="set-time__content">
+										<i class="far fa-star"></i>Starred
+									</div>
+								</li>
+								<li>
+									<div class="set-time__content">
+										<i class="far fa-envelope"></i>Important
+									</div>
+								</li>
+								<li>
+									<div class="set-time__content flex">
+										<div class="tex-set__time">
+											<i class="fas fa-arrow-right"></i>Sent Mail
+										</div>
+										<div class="set stand">
+											<span class="col-set">14</span>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="set-time__content">
+										<i class="far fa-edit"></i>Drafts
+									</div>
+								</li>
+								<li>
+									<div class="set-time__content">
+										<i class="far fa-clock"></i>Spam
+									</div>
+								</li>	
+							</ul>
+							<div class="accordion">
+								<button class="button-accordion">
+									<img src="../img/rac.svg" alt="rac">
+									Others<i class="fas fa-caret-down"></i>
+								</button>
+							</div>
+							<ul class="nav-bar__button">
+								<li>Account options</li>
+							</ul>
+							<ul class="list-bar">
+								<li>
+									<div class="set-time__content">
+										<i class="fas fa-cog"></i>Setting
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<!-- Подключение скриптов -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.js"></script>
+	<script  src="../js/main.js"></script>
+	<!-- Конец подключения скриптов -->
+</body>
+</html>

@@ -1,0 +1,19 @@
+@media(max-width: 411px){
+    .banner-message__hide {
+        padding-top: 60px;
+        height: 50vh;
+    }
+}
+@media(max-width: 360px){
+    .dialog-content{
+        width: 100%;
+    }
+    .banner-message__hide {
+        padding-top: 97px;
+        height: 80vh;
+    }
+    .bottom-sheet.open{
+        height: 90vh;
+        overflow: auto;
+    }
+}
